@@ -11,6 +11,16 @@ Claude Code plugin for searching and installing Boomi Marketplace recipes. Insta
 
 Requires `boomi-integration` plugin for recipe installs. The install script sources `boomi-common.sh` from bc-integration for authentication and activity logging. Catalog search works standalone. This plugin also depends on bc-integration's folder management, component pulling tools, and platform knowledge to complete its workflow.
 
+## Versioning
+
+`CHANGELOG.md` and the `version` field in `.claude-plugin/plugin.json` are managed by CI on merge to main. Do not edit them directly.
+
+To record a change, create a file in `changes/` named after the branch (if the branch contains a `/`, use only the part after the slash). Content is the changelog entry with `- ` prefix:
+
+```
+- Add support for new feature
+```
+
 ## Structure
 
 ```
