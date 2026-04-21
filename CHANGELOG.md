@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.5
+
+- Add disclaimer to README clarifying Boomi Companion is a best-effort developer offering, not an officially supported Boomi product
+
+
 ## 0.2.4
 
 - Fix skill sync step to pull latest main before rsync so VERSION stays in sync
