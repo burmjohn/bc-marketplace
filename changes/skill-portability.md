@@ -1,0 +1,1 @@
+- Clarify host-neutral Boomi Marketplace skill usage and the `BOOMI_COMMON_SH` dependency on the `boomi-integration` skill.

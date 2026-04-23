@@ -10,7 +10,7 @@ This project is licensed under the [BSD-2-Clause License](LICENSE). If you fork 
 
 Found a bug or have a feature idea? Email developer-offerings@boomi.com with a clear description, steps to reproduce, and any relevant error messages.
 
-## Installation
+## Claude Code Installation
 
 ```bash
 /plugin marketplace add OfficialBoomi/boomi-companion
@@ -19,10 +19,17 @@ Found a bug or have a feature idea? Email developer-offerings@boomi.com with a c
 
 Or browse and install via `/plugin` interactively.
 
+## Using the Skill From Other Agents
+
+Agents that can load skill folders directly can use `skills/boomi-marketplace`
+without the Claude plugin wrapper. Marketplace search works standalone. Recipe
+install requires the `boomi-integration` skill because the install script
+sources `scripts/boomi-common.sh` for authentication and activity logging.
+
 ## Dependencies
 
-- **Search** works standalone — no other plugins required.
-- **Install** requires the `bc-integration` plugin. The install script sources `boomi-common.sh` from bc-integration for authentication and activity logging. Folder creation and component pulling also use bc-integration's tools.
+- **Search** works standalone — no other skills required.
+- **Install** requires the `boomi-integration` skill. The install script sources `boomi-common.sh` from boomi-integration for authentication and activity logging. Folder creation and component pulling also use boomi-integration's tools.
 
 ## Skill: boomi-marketplace
 

@@ -5,8 +5,8 @@ Claude Code plugin for searching and installing Boomi Marketplace recipes. Insta
 ## Installation
 
 ```bash
-/plugin marketplace add git@bitbucket.org:officialboomi/boomi-marketplace.git
-/plugin install bc-marketplace@boomi-marketplace
+/plugin marketplace add OfficialBoomi/boomi-companion
+/plugin install bc-marketplace@boomi-companion
 ```
 
 Requires `boomi-integration` plugin for recipe installs. The install script sources `boomi-common.sh` from bc-integration for authentication and activity logging. Catalog search works standalone. This plugin also depends on bc-integration's folder management, component pulling tools, and platform knowledge to complete its workflow.

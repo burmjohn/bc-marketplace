@@ -13,9 +13,9 @@ Use when building an integration and a marketplace recipe exists that could serv
 
 ## Prerequisites
 
-- **Search** works standalone — no other plugins required.
-- **Install** requires the `bc-integration` plugin. **Before any install operation, you MUST load the `bc-integration` skill and confirm you can resolve the path to its `scripts/boomi-common.sh`.** The resolution pattern is: `<bc-integration skill base directory>/scripts/boomi-common.sh`. If bc-integration is not loaded, STOP and load it before proceeding. Do not attempt to guess the path.
-- Install also depends on bc-integration's folder creation and component pulling tools to complete the workflow.
+- **Search** works standalone — no other skills required.
+- **Install** requires the `boomi-integration` skill. Before any install operation, locate the `boomi-integration` skill directory and resolve `<boomi-integration skill path>/scripts/boomi-common.sh`. Pass that path as `BOOMI_COMMON_SH` when running `boomi-marketplace-install.sh`. Do not guess the path.
+- Install also depends on boomi-integration's folder creation and component pulling tools to complete the workflow.
 
 ## Workflow
 
@@ -37,13 +37,13 @@ Recipes are reference patterns, not production-ready. Use them for structure and
 
 ### Recipe Install
 
-Installs a marketplace recipe into a target folder. Requires `.env` credentials and the `bc-integration` plugin.
+Installs a marketplace recipe into a target folder. Requires `.env` credentials and the `boomi-integration` skill.
 
 ```
-BOOMI_COMMON_SH=<path to bc-integration's boomi-common.sh> bash scripts/boomi-marketplace-install.sh --bundle-id <artifactSourceId> --folder-id <numeric_folder_id>
+BOOMI_COMMON_SH=<path to boomi-integration's boomi-common.sh> bash scripts/boomi-marketplace-install.sh --bundle-id <artifactSourceId> --folder-id <numeric_folder_id>
 ```
 
-Set `BOOMI_COMMON_SH` to the path of `boomi-common.sh` from the bc-integration skill's `scripts/` directory. Resolve this path from the loaded bc-integration skill — you already know where its scripts live.
+Set `BOOMI_COMMON_SH` to the path of `boomi-common.sh` from the boomi-integration skill's `scripts/` directory. Resolve this path from the loaded boomi-integration skill.
 
 The script handles authentication, validates credentials before calling the API, and logs all activity. On success it prints the `copiedComponentId` values needed for the next step (component pulling).
 

@@ -27,7 +27,7 @@ Recipes are reference patterns, not production-ready components. Use them for st
 
 ### For installs only
 
-- The `bc-integration` plugin must be installed and its skill loaded — the install script sources `boomi-common.sh` from bc-integration for authentication, credential validation, and activity logging.
+- The `boomi-integration` skill must be available — the install script sources `boomi-common.sh` from boomi-integration for authentication, credential validation, and activity logging.
 - A configured `.env` file in your project root with Boomi platform API credentials (see the boomi-integration skill README for details).
 
 ## Installation
@@ -44,6 +44,13 @@ Alternatively, navigate the `/plugin` menu interactively within Claude Code to a
 ### Manual configuration
 
 Clone or copy this skill directory into the location your platform uses for agent skills. Consult your platform's documentation for the correct skill directory path.
+
+## Using the Skill From Other Agents
+
+Agents that can load skill folders directly can use `skills/boomi-marketplace`
+without the Claude plugin wrapper. Marketplace search works standalone. Recipe
+install requires the `boomi-integration` skill because the install script
+sources `scripts/boomi-common.sh` for authentication and activity logging.
 
 ## Usage
 
@@ -73,7 +80,7 @@ Agent: [Creates marketplace-imports folder]
 
 The skill makes the following CLI tool available to the agent:
 
-- `boomi-marketplace-install.sh` — Installs a marketplace recipe bundle into a target folder. Handles authentication via bc-integration's shared infrastructure, validates credentials before calling the API, and logs all activity.
+- `boomi-marketplace-install.sh` — Installs a marketplace recipe bundle into a target folder. Handles authentication via boomi-integration's shared infrastructure, validates credentials before calling the API, and logs all activity.
 
 ```
 BOOMI_COMMON_SH=<path/to/boomi-common.sh> bash scripts/boomi-marketplace-install.sh --bundle-id <artifactSourceId> --folder-id <numeric_folder_id>
