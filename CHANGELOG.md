@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.6
+
+- Update feedback email to developer-offerings@boomi.com
+
+
 ## 0.2.5
 
 - Add disclaimer to README clarifying Boomi Companion is a best-effort developer offering, not an officially supported Boomi product
